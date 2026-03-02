@@ -112,8 +112,6 @@ header {
 	width: 100%;
 	min-height: 470px;
 	position: relative;
-	/*test*/
-	background-color: blue;
 }
 .banner-img {
 	position: absolute;
