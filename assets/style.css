@@ -112,6 +112,8 @@ header {
 	width: 100%;
 	min-height: 470px;
 	position: relative;
+	/*test*/
+	background-color: blue;
 }
 .banner-img {
 	position: absolute;
@@ -124,7 +126,10 @@ header {
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
 /* Gestion des fleches du carrousel */
 #banner .arrow {
+	z-index: 10;
 	position: absolute;
+	font-size: 80px;
+	color: #fff;
 }
 #banner .arrow_left {
 	left: 10px;
