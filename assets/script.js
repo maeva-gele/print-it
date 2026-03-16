@@ -29,16 +29,12 @@ img.classList.add("banner-img")
 //CREATION DU TEXTE 
 const txt = document.createElement("p")
 
-//CREATION DES DOTS 
-const dotsHome = document.getElementsByClassName("dots")
-const dot = document.createElement("div")
-dot.classList.add("dot")
-
 //VARIABLES DU CAROUSSEL 
 function caroussel() {
 	img.src = basePath + slides[index].image 
 	img.alt = slides[index].tagLine 
 	txt.innerHTML = slides[index].tagLine // Utilise innerHTML pour afficher le HTML dans tagLine
+	dotCaroussel()
 }
 
 // LES BOUTONS "EVENT LISTENER"
@@ -55,6 +51,25 @@ boutonDroite.addEventListener("click", () => {
     caroussel()
 });
 
+
+//CREATION DES DOTS 
+const dotsHome = document.querySelector(".dots")
+slides.forEach((slide, index) => {
+	const dot = document.createElement("div")
+	dot.classList.add("dot")
+	dotsHome.appendChild(dot)
+})
+
+//VARIABLE DOTS 
+function dotCaroussel() {
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("dot_selected", i === index); // Ajoute la classe 'active' au dot correspondant
+    });
+}
+
+
 //AFFICHAGE DES ELEMENTS 
 banner.appendChild(img)
 banner.appendChild(txt)
+caroussel()
